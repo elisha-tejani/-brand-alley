@@ -22,7 +22,7 @@ export default function Footer() {
         <div>
           <a href="#" className="flex items-center gap-2.5 mb-3">
             <Image src="/logo.png" alt="Brand Alley" width={30} height={30} className="rounded-[6px]" />
-            <span className="font-serif font-semibold text-[17px]">BRAND ALLEY</span>
+            <span className="font-sans font-extrabold text-[17px]">BRAND ALLEY</span>
           </a>
           <p className="text-clay text-[13px] max-w-[240px] leading-relaxed">
             Considered clothing, made in small batches. Karachi, Pakistan.
@@ -38,7 +38,7 @@ export default function Footer() {
 
         {columns.map((col) => (
           <div key={col.title}>
-            <h5 className="font-mono text-[11px] tracking-[0.1em] text-clay mb-4">{col.title}</h5>
+            <h5 className="font-sans font-semibold text-[11px] tracking-[0.1em] text-clay mb-4">{col.title}</h5>
             {col.links.map((link) => (
               <a key={link} href="#" className="block text-[13.5px] mb-2.5 hover:text-orange-deep">
                 {link}

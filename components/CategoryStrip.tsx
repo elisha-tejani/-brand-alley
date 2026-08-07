@@ -22,7 +22,7 @@ export default function CategoryStrip() {
             <div>
               <h3 className="text-paper font-medium text-[15px] tracking-wide">{c.title}</h3>
               <p className="text-clay text-[13px] mt-1">{c.tagline}</p>
-              <span className="inline-block mt-3 font-mono text-[11px] tracking-wider text-orange group-hover:underline">
+              <span className="inline-block mt-3 font-sans font-semibold text-[11px] tracking-wider text-orange group-hover:underline">
                 SHOP NOW →
               </span>
             </div>

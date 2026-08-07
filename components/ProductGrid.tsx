@@ -6,8 +6,8 @@ export default function ProductGrid() {
   return (
     <section className="max-w-[1280px] mx-auto px-6 py-16">
       <div className="flex items-end justify-between mb-8">
-        <h2 className="font-serif font-medium text-[26px] tracking-wide">BEST OF BRAND ALLEY</h2>
-        <a href="#" className="font-mono text-[12px] tracking-wider border-b border-ink pb-0.5">
+        <h2 className="font-sans font-extrabold text-[22px] sm:text-[26px] tracking-wide">BEST OF BRAND ALLEY</h2>
+        <a href="#" className="font-sans font-semibold text-[12px] tracking-wider border-b border-ink pb-0.5">
           VIEW ALL
         </a>
       </div>
@@ -33,7 +33,7 @@ export default function ProductGrid() {
             <p className="text-[13.5px] font-medium leading-tight">{p.name}</p>
             <div className="flex items-center justify-between mt-1">
               <span className="text-[11px] text-clay">{p.category}</span>
-              <span className="font-mono text-[12.5px] font-bold text-orange-deep">{formatPrice(p.price)}</span>
+              <span className="font-sans font-bold text-[12.5px] text-orange-deep">{formatPrice(p.price)}</span>
             </div>
           </div>
         ))}

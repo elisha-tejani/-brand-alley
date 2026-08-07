@@ -34,7 +34,7 @@ export default function Newsletter() {
           />
           <button
             type="submit"
-            className="bg-orange text-ink font-mono text-[12px] tracking-wider uppercase px-6 hover:bg-paper transition-colors"
+            className="bg-orange text-ink font-sans font-semibold text-[12px] tracking-wider uppercase px-6 hover:bg-paper transition-colors"
           >
             {submitted ? "Subscribed ✓" : "Subscribe"}
           </button>
