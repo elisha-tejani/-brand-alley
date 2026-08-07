@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #15120f;
+  --orange: #eb7302;
+  --orange-deep: #c25a00;
+  --stone: #ede6da;
+  --paper: #faf7f2;
+  --clay: #8a7f6e;
+  --line: rgba(21, 18, 15, 0.14);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-orange: var(--orange);
+  --color-orange-deep: var(--orange-deep);
+  --color-stone: var(--stone);
+  --color-paper: var(--paper);
+  --color-clay: var(--clay);
+  --color-line: var(--line);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-space-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.seam {
+  width: 100%;
+  height: 22px;
+  background-repeat: repeat-x;
+  background-size: 26px 22px;
+  background-position: center;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='22'><path d='M0 11 Q6.5 2 13 11 T26 11' fill='none' stroke='%23EB7302' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='3 4'/></svg>");
+}
