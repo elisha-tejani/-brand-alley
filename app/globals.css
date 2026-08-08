@@ -44,3 +44,14 @@ body {
   background-position: center;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='26' height='22'><path d='M0 11 Q6.5 2 13 11 T26 11' fill='none' stroke='%23EB7302' stroke-width='1.6' stroke-linecap='round' stroke-dasharray='3 4'/></svg>");
 }
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 18s linear infinite;
+}
