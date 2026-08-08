@@ -1,13 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { label: "WOMEN", href: "#women" },
-  { label: "DRESSES", href: "#dresses" },
-  { label: "NEW ARRIVALS", href: "#new" },
-  { label: "COLLECTIONS", href: "#collections" },
+  { label: "WOMEN", href: "/women" },
+  { label: "DRESSES", href: "/dresses" },
+  { label: "NEW ARRIVALS", href: "/new-arrivals" },
+  { label: "COLLECTIONS", href: "/collections" },
 ];
 
 export default function Navbar() {
@@ -18,9 +19,9 @@ export default function Navbar() {
       <nav className="max-w-[1280px] mx-auto px-6 py-4 grid grid-cols-3 items-center">
         <div className="hidden md:flex items-center gap-7 text-[13px] font-sans tracking-wide">
           {links.map((l) => (
-            <a key={l.label} href={l.href} className="hover:text-orange-deep">
+            <Link key={l.label} href={l.href} className="hover:text-orange-deep">
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -36,10 +37,10 @@ export default function Navbar() {
           </svg>
         </button>
 
-        <a href="#" className="flex items-center justify-center gap-2.5">
+        <Link href="/" className="flex items-center justify-center gap-2.5">
           <Image src="/logo.png" alt="Brand Alley" width={34} height={34} className="rounded-[7px]" />
           <span className="font-sans font-extrabold text-[17px] sm:text-[19px] tracking-wide">BRAND ALLEY</span>
-        </a>
+        </Link>
 
         <div className="flex items-center justify-end gap-4 sm:gap-5 text-[13px] font-sans">
           <button className="hidden sm:inline hover:text-orange-deep">SEARCH</button>
@@ -55,9 +56,9 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-line bg-paper px-6 py-4 flex flex-col gap-4 text-[13px] font-sans">
           {links.map((l) => (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="hover:text-orange-deep">
+            <Link key={l.label} href={l.href} onClick={() => setOpen(false)} className="hover:text-orange-deep">
               {l.label}
-            </a>
+            </Link>
           ))}
           <div className="flex gap-5 pt-2 border-t border-line">
             <button className="hover:text-orange-deep">SEARCH</button>

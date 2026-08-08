@@ -6,6 +6,10 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="relative flex flex-col md:min-h-[560px] md:flex-row md:items-center py-10 md:py-0">
 
+          {/* top-right collection tag */}
+          <div className="hidden md:block absolute top-0 right-0 font-sans font-medium text-[11px] tracking-wider text-clay text-right leading-relaxed">
+            NEW<br />COLLECTION<br />2026
+          </div>
 
           {/* left text block */}
           <div className="relative z-10 max-w-[420px] md:py-16 order-2 md:order-1">
@@ -22,12 +26,12 @@ export default function Hero() {
 
             <div className="flex flex-wrap items-center gap-5 sm:gap-6 mt-6 md:mt-8">
               <a
-                href="#shop"
+                href="/shop"
                 className="inline-block bg-ink text-paper font-sans font-semibold text-[12px] tracking-wider uppercase px-7 py-3.5 hover:bg-orange hover:text-ink transition-colors"
               >
                 Shop Now
               </a>
-              <a href="#new" className="font-sans font-semibold text-[12px] tracking-wider uppercase border-b border-ink pb-0.5">
+              <a href="/new-arrivals" className="font-sans font-semibold text-[12px] tracking-wider uppercase border-b border-ink pb-0.5">
                 Explore New In
               </a>
             </div>

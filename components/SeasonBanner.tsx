@@ -12,7 +12,7 @@ export default function SeasonBanner() {
           Discover everything new and now.
         </p>
         <a
-          href="#new"
+          href="/new-arrivals"
           className="inline-block bg-ink text-paper font-sans font-semibold text-[12px] tracking-wider uppercase px-7 py-3.5 mt-7 w-fit hover:bg-orange hover:text-ink transition-colors"
         >
           Explore Collection

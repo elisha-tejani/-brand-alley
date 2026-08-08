@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const categories = [
-  { title: "OUTERWEAR", tagline: "Coats & jackets for layered days.", img: "/images/category-outerwear.jpg" },
-  { title: "DRESSES", tagline: "Fluid silhouettes, forever in style.", img: "/images/category-dresses.jpg" },
-  { title: "ESSENTIALS", tagline: "Light, everyday & made for you.", img: "/images/category-essentials.jpg" },
+  { title: "OUTERWEAR", tagline: "Coats & jackets for layered days.", img: "/images/category-outerwear.jpg", href: "/shop" },
+  { title: "DRESSES", tagline: "Fluid silhouettes, forever in style.", img: "/images/category-dresses.jpg", href: "/dresses" },
+  { title: "ESSENTIALS", tagline: "Light, everyday & made for you.", img: "/images/category-essentials.jpg", href: "/shop" },
 ];
 
 export default function CategoryStrip() {
@@ -13,7 +13,7 @@ export default function CategoryStrip() {
         {categories.map((c) => (
           <a
             key={c.title}
-            href="#"
+            href={c.href}
             className="group flex items-center gap-5 py-10 px-2 border-b sm:border-b-0 sm:border-r border-white/10 last:border-0"
           >
             <div className="relative w-20 h-24 rounded-sm overflow-hidden shrink-0 bg-white/5">
