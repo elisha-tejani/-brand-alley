@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const links = [
   { label: "WOMEN", href: "/women" },
-  { label: "DRESSES", href: "/dresses" },
+  { label: "ABOUT US", href: "/about" },
   { label: "NEW ARRIVALS", href: "/new-arrivals" },
   { label: "COLLECTIONS", href: "/collections" },
 ];
@@ -44,7 +44,6 @@ export default function Navbar() {
 
         <div className="flex items-center justify-end gap-4 sm:gap-5 text-[13px] font-sans">
           <button className="hidden sm:inline hover:text-orange-deep">SEARCH</button>
-          <button className="hidden sm:inline hover:text-orange-deep">LOGIN</button>
           <button className="hidden sm:inline hover:text-orange-deep">WISHLIST</button>
           <button className="font-medium text-[11px] sm:text-[12px] border border-line rounded-full px-2.5 sm:px-3 py-1.5 hover:border-ink">
             CART (0)
@@ -62,7 +61,6 @@ export default function Navbar() {
           ))}
           <div className="flex gap-5 pt-2 border-t border-line">
             <button className="hover:text-orange-deep">SEARCH</button>
-            <button className="hover:text-orange-deep">LOGIN</button>
             <button className="hover:text-orange-deep">WISHLIST</button>
           </div>
         </div>
