@@ -7,7 +7,7 @@ const columns = [
   },
   {
     title: "CUSTOMER CARE",
-    links: ["Contact Us", "Shipping & Delivery", "Returns & Exchanges", "FAQ"],
+    links: ["Contact Us", "Shipping & Delivery", "FAQ"],
   },
   {
     title: "ABOUT US",

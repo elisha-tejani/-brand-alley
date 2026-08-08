@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #15120f;
+  --ink: #0b0b0b;
   --orange: #eb7302;
   --orange-deep: #c25a00;
-  --stone: #ede6da;
-  --paper: #faf7f2;
-  --clay: #8a7f6e;
-  --line: rgba(21, 18, 15, 0.14);
+  --stone: #e4dfdb;
+  --paper: #eeedeb;
+  --clay: #948879;
+  --line: rgba(11, 11, 11, 0.14);
 }
 
 @theme inline {
