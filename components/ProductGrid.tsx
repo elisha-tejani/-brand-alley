@@ -1,7 +1,15 @@
 import ProductCard from "./ProductCard";
-import { products } from "@/data/products";
+import { prisma } from "@/lib/prisma";
 
-export default function ProductGrid() {
+export const dynamic = "force-dynamic";
+
+export default async function ProductGrid() {
+  const products = await prisma.product.findMany({
+    where: { featured: true },
+    orderBy: { createdAt: "desc" },
+    take: 6,
+  });
+
   return (
     <section className="max-w-[1280px] mx-auto px-6 py-16">
       <div className="flex items-end justify-between mb-8">
@@ -11,11 +19,15 @@ export default function ProductGrid() {
         </a>
       </div>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
-        {products.map((p) => (
-          <ProductCard key={p.id} product={p} />
-        ))}
-      </div>
+      {products.length === 0 ? (
+        <p className="text-clay text-[14px]">No products yet — add some from /admin.</p>
+      ) : (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+          {products.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

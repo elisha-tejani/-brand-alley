@@ -1,4 +1,4 @@
-import { Product } from "@/data/products";
+import type { Product } from "@prisma/client";
 import ProductCard from "./ProductCard";
 
 export default function ShopGrid({

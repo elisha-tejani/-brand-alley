@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "@/lib/cart-context";
 
 const links = [
   { label: "WOMEN", href: "/women" },
@@ -13,6 +14,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { count } = useCart();
 
   return (
     <header className="sticky top-0 z-50 bg-paper border-b border-line">
@@ -45,9 +47,12 @@ export default function Navbar() {
         <div className="flex items-center justify-end gap-4 sm:gap-5 text-[13px] font-sans">
           <button className="hidden sm:inline hover:text-orange-deep">SEARCH</button>
           <button className="hidden sm:inline hover:text-orange-deep">WISHLIST</button>
-          <button className="font-medium text-[11px] sm:text-[12px] border border-line rounded-full px-2.5 sm:px-3 py-1.5 hover:border-ink">
-            CART (0)
-          </button>
+          <Link
+            href="/cart"
+            className="font-medium text-[11px] sm:text-[12px] border border-line rounded-full px-2.5 sm:px-3 py-1.5 hover:border-ink"
+          >
+            CART ({count})
+          </Link>
         </div>
       </nav>
 

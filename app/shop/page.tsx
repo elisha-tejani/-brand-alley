@@ -1,10 +1,12 @@
 import PageHeader from "@/components/PageHeader";
 import ShopGrid from "@/components/ShopGrid";
-import { products } from "@/data/products";
+import { prisma } from "@/lib/prisma";
 
 export const metadata = { title: "All Products — Brand Alley" };
+export const dynamic = "force-dynamic";
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const products = await prisma.product.findMany({ orderBy: { createdAt: "desc" } });
   return (
     <>
       <PageHeader eyebrow="Shop" title="All Products" description="Every piece, in one place." />

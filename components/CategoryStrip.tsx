@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const categories = [
-  { title: "OUTERWEAR", tagline: "Coats & jackets for layered days.", img: "/images/category-outerwear.jpg", href: "/shop" },
-  { title: "DRESSES", tagline: "Fluid silhouettes, forever in style.", img: "/images/category-dresses.jpg", href: "/dresses" },
-  { title: "ESSENTIALS", tagline: "Light, everyday & made for you.", img: "/images/category-essentials.jpg", href: "/shop" },
+  { title: "WINTER WEAR", tagline: "Hoodies, sweaters & jackets for layered days.", img: "/images/category-outerwear.jpg", href: "/shop/winter-wear" },
+  { title: "DRESSES", tagline: "Fluid silhouettes, forever in style.", img: "/images/category-dresses.jpg", href: "/shop/dresses" },
+  { title: "ACTIVEWEAR", tagline: "Gym wear & athleisure, made for you.", img: "/images/category-essentials.jpg", href: "/shop/activewear" },
 ];
 
 export default function CategoryStrip() {
