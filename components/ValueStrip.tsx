@@ -6,7 +6,11 @@ const values = [
       <path d="M3 7h11v9H3zM14 10h4l3 3v3h-7zM6 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" />
     ),
   },
-  
+  {
+    title: "Easy Returns",
+    sub: "Within 14 days",
+    icon: <path d="M21 12a9 9 0 11-6-8.485M21 3v6h-6" />,
+  },
   {
     title: "Quality Assured",
     sub: "Best fashion, best quality",

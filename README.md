@@ -1,55 +1,53 @@
 # Brand Alley — Website
 
-A Next.js 15 (App Router) + Tailwind CSS storefront for Brand Alley, structured to
-match the reference layout: top utility bar → nav → hero → category strip →
-season banner → value props → best sellers grid → newsletter → footer.
+A Next.js (App Router) + Tailwind CSS storefront for Brand Alley, with a real
+Postgres database (Supabase), image uploads, and a password-protected admin
+dashboard for managing products.
 
-## Run it locally
+## First-time setup
 
+**Read [`BACKEND_SETUP.md`](./BACKEND_SETUP.md) first** — you need a Supabase
+project and a few environment variables before `npm run dev` will work, since
+the site now reads products from a real database instead of hardcoded data.
+
+Once that's done:
 ```bash
 npm install
 npm run dev
 ```
-
-Then open http://localhost:3000
-
-## What's placeholder right now
-
-- **Product images**: simple line-art SVGs (`components/GarmentIcon.tsx`) stand in
-  for real photography. Swap these for `<Image>` tags pointing at your actual
-  product photos once you have them (Cloudinary is a good place to host them).
-- **Product data**: lives in `data/products.ts` as a static array. This is where
-  a database call will go once the admin dashboard is built.
-- **Logo**: your real logo, already wired in at `public/logo.png`.
+Then open http://localhost:3000, and http://localhost:3000/admin for the dashboard.
 
 ## Project structure
 
 ```
 app/
-  layout.tsx      → fonts + global shell
-  page.tsx         → assembles the homepage sections in order
-  globals.css      → color tokens (--ink, --orange, --stone...) + fonts
+  layout.tsx           → fonts, TopBar/Navbar/Footer, global shell
+  page.tsx              → homepage sections in order
+  shop/, women/, dresses/, new-arrivals/, collections/
+                         → product listing pages (query the database)
+  product/[id]/          → single product page
+  admin/                 → password-protected dashboard (list/add/edit/delete)
+  api/products/           → public GET, admin-only POST/PUT/DELETE
+  api/admin/               → login, logout, image upload (all admin-only)
 components/
-  TopBar.tsx        → black utility strip
-  Navbar.tsx         → logo + nav links + cart
-  Hero.tsx           → SHOP / BRAND ALLEY hero
-  CategoryStrip.tsx  → dark 3-column category strip
-  SeasonBanner.tsx   → split "new season" banner
-  ValueStrip.tsx     → delivery/returns/quality/payment icons
-  ProductGrid.tsx    → best sellers grid
-  Newsletter.tsx     → email signup bar
-  Footer.tsx         → link columns + copyright
-data/
-  products.ts        → placeholder product data
+  TopBar, Navbar, Hero, CategoryStrip, SeasonBanner,
+  ValueStrip, ProductGrid, Newsletter, Footer  → homepage sections
+  ProductCard, ShopGrid                         → shared product display
+  admin/                                        → admin-only form/buttons
+lib/
+  prisma.ts             → database client
+  supabase-admin.ts      → server-only image storage client
+  admin-auth.ts           → admin session cookie helpers
+  format.ts                → price formatting
+prisma/
+  schema.prisma          → the Product table definition
+  seed.ts                  → loads starter products into a fresh database
 public/
-  logo.png           → your brand logo
+  logo.png, images/       → your brand logo and photos
 ```
 
-## Next steps (not built yet)
+## What's still placeholder
 
-1. Real product photography, swapped into `ProductGrid.tsx` / `CategoryStrip.tsx`.
-2. An admin dashboard (custom, or Strapi/Sanity) so products can be added without
-   touching code.
-3. A database (Postgres via Supabase/Neon) behind `data/products.ts`.
-4. Deploy: push this repo to GitHub, connect it to Vercel, point your domain
-   (bought via Namecheap/Cloudflare) at it.
+- **Checkout**: "Add to Cart" is a UI placeholder — no payments or order flow yet.
+- **Products without a photo** show illustrated SVG placeholder art automatically;
+  upload a real photo for any product from `/admin` and it switches over.

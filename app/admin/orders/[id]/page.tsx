@@ -20,7 +20,7 @@ export default async function AdminOrderDetailPage({ params }: { params: Promise
 
       <div className="flex items-center justify-between mt-4 mb-8">
         <h1 className="font-sans font-extrabold text-[22px]">Order #{order.id.slice(-8).toUpperCase()}</h1>
-        <OrderStatusSelect orderId={order.id} currentStatus={order.status} />
+        <OrderStatusSelect key={order.status} orderId={order.id} currentStatus={order.status} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-8 text-[13.5px]">

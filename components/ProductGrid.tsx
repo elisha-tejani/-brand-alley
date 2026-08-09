@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ProductCard from "./ProductCard";
 import { prisma } from "@/lib/prisma";
 
@@ -14,9 +15,9 @@ export default async function ProductGrid() {
     <section className="max-w-[1280px] mx-auto px-6 py-16">
       <div className="flex items-end justify-between mb-8">
         <h2 className="font-sans font-extrabold text-[22px] sm:text-[26px] tracking-wide">BEST OF BRAND ALLEY</h2>
-        <a href="/shop" className="font-sans font-semibold text-[12px] tracking-wider border-b border-ink pb-0.5">
+        <Link href="/shop" className="font-sans font-semibold text-[12px] tracking-wider border-b border-ink pb-0.5">
           VIEW ALL
-        </a>
+        </Link>
       </div>
 
       {products.length === 0 ? (
